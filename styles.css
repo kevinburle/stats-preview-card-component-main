@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+/*  || RESET */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+/*  || VARIABLES */
+
+:root {
+  /* COLORS */
+  --MAIN-BACKGROUND: hsl(233, 47%, 7%);
+  --CARD-BACKGROUND: hsl(244, 38%, 16%);
+  --ACCENT: hsl(277, 64%, 61%);
+  --MAIN-HEADING: hsl(0, 0%, 100%);
+  --MAIN-PARAGRAPH: hsla(0, 0%, 100%, 0.75);
+  --STAT-HEADING: hsla(0, 0%, 100%, 0.6);
+
+  /* FONT SIZE */
+  --DEFAULT: 1.5rem;
+  --H1: 2.6rem;
+  --H2: 2.6rem;
+
+  /* FONT FAMILY */
+  --INTER: "Inter", sans-serif;
+  --LEXEND-DECA: "Lexend deca", sans-serif;
+
+  /* RESPONSIVE */
+  --CONTAINER-WIDTH: 33.5rem;
+  --PADDING-TEXT-CONTAINER: 1.5rem 3.5rem;
+  --PADDIN-TEXT-ELEMENT: 2rem 0;
+  --PADDING-BOTTOM-PARAGRAPH: 1.5rem;
+}
+
+/* || GLOBALS */
+
+body {
+  font-size: var(--DEFAULT);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--MAIN-BACKGROUND);
+}
+
+img {
+  width: 100%;
+  display: block;
+  mix-blend-mode: multiply;
+  opacity: 80%;
+}
+
+h1,
+h2 {
+  color: var(--MAIN-HEADING);
+  font-family: var(--INTER);
+}
+
+h1 {
+    font-size: var(--H1);
+}
+
+h2 {
+    font-size: var(--H2);
+}
+
+p {
+  font-family: var(--INTER);
+  font-weight: 400;
+  color: var(--MAIN-PARAGRAPH);
+  line-height: 2.5rem;
+}
+
+.wrap {
+  display: inline-block;
+}
+
+/* MOBILE WORKFLOW FIRST */
+
+.container {
+  background-color: var(--CARD-BACKGROUND);
+  width: 100%;
+  max-width: var(--CONTAINER-WIDTH);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  background-color: var(--ACCENT);
+}
+
+.text-content {
+  padding: var(--PADDING-TEXT-CONTAINER);
+  text-align: center;
+}
+
+.title {
+  padding: var(--PADDIN-TEXT-ELEMENT);
+}
+
+h1.title span {
+  color: var(--ACCENT);
+}
+
+.text {
+  padding-bottom: var(--PADDING-BOTTOM-PARAGRAPH);
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.number span {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+  display: block;
+  font-family: var(--LEXEND-DECA);
+  font-weight: 400;
+  color: var(--STAT-HEADING);
+  letter-spacing: 0.1rem;
+}
+
+.number {
+  padding: var(--PADDING-TEXT-CONTAINER);
+}
+
+/* LARGE SCREEN MIN WIDTH 1024px */
+
+@media screen and (min-width: 1024px) {
+
+    :root {
+       
+        /* FONT SIZE */
+        --DEFAULT: 1.2rem;
+        --H2: 2rem;
+      
+        /* RESPONSIVE */
+        --CONTAINER-WIDTH: 98.4rem;
+        --PADDING-TEXT-CONTAINER: 4rem 12rem 4rem 8rem;
+        --MARGIN-TOP-PARAGRAPH: -5rem;
+        --PADDING-BOTTOM-PARAGRAPH: 1.5rem;
+      }
+
+    .container {
+        flex-direction: row-reverse;
+    }
+
+    .image {
+        width: 50%;
+    }
+
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        width: 50%;
+    }
+
+    .stat-box {
+        flex-direction: row;
+    }
+
+    p {
+        margin-top: var(--MARGIN-TOP-PARAGRAPH);
+    }
+
+    .number {
+        padding: initial;
+        font-size: var(--H2);
+    }
+
+    .number span {
+        font-size: 1rem;
+    }
+}
